@@ -23,6 +23,9 @@ class Post(models.Model):
     def approved_comments(self):
         return self.comments.filter(approved_comment=True)
 
+    def non_approved_comments(self):
+        return self.comments.filter(approved_comment=False)
+
     def __str__(self):
         return self.title
 
